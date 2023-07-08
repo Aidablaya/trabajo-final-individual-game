@@ -1,0 +1,131 @@
+
+.box {
+    position: fixed; 
+    width: 80vw;
+    height: 80vw * (9 / 16);
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    &__iconForest {        
+      position: relative;       
+      z-index: 2;
+  
+      &--forest {
+        transition: transform 0.3s ease;
+        position: relative; 
+        z-index: 2;
+        width: 47%;
+  
+        &:hover {
+          transform: scale(1.1) translateX(20px);  
+        }
+      }
+    }
+  
+    &__iconWell {
+      position: relative; 
+      z-index: 3;   
+      left: 12%;
+      display: flex;
+      justify-content: center;
+      
+  
+      &--well {
+        transition: transform 0.3s ease;
+        position: relative; 
+        z-index: 3;
+        width: 40%;
+        top: -120%;
+        left: -1%;
+  
+        &:hover {
+          transform: scale(1.1);  
+        }
+      }
+    }
+  
+    &__iconCauldron {
+      position: relative; 
+      z-index: 4; 
+      display: flex;
+      justify-content: center;
+      &--cauldron {
+        transition: transform 0.3s ease;
+        position: relative; 
+        z-index: 3;
+        width: 49%;
+        bottom: 157%;
+        left: 34%;
+  
+        &:hover {
+          transform: scale(1.1);  
+        }
+      }
+    }
+  
+    &__iconInfo {
+      position: relative; 
+      z-index: 5; 
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      &--info {
+        transition: transform 0.3s ease;
+        position: relative; 
+        width: 38%;
+        bottom: 265%;
+        left: 2%;
+        &:hover {
+          transform: scale(1.1);  
+        }
+      }
+    }
+  }
+  
+  
+  
+  .backgroundGame {
+    width: 80vw;
+    height: 80vw * (9 / 16);
+    object-fit: contain;     
+    position: fixed; 
+    top: 50%;  
+    left: 50%;  
+    transform: translate(-50%, -50%);   
+    z-index: 0;
+  }
+  
+  .popupInfo {
+    width: 60%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    &__img {
+      width: 80%;
+      
+    }
+    
+    &__close {
+      position: absolute;
+      z-index: 6;
+      top: 2%;
+      right: 12%;
+      cursor: pointer;
+      width: 10%;
+      &--img {
+        width: 30%;
+      }
+      
+    }
+  };
+  

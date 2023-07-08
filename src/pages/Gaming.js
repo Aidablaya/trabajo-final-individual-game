@@ -9,14 +9,25 @@ import linkCauldron from '../images/icon-cauldron.png';
 import linkInfo from '../images/icon-info.png';
 import linkPopInfo from '../images/textoinfo.jpeg';
 import iconX from '../images/X.png';
-import Popup from 'reactjs-popup';
+//import Popup from 'reactjs-popup';
+import '../styles/components/Gaming.scss'
+import { Link } from 'react-router-dom';
+
+
+
+
+
 
 function App() {
 
-  const [info, setInfo] = useState(null);
+  const [info, setInfo] = useState(false);
 
-  const handleClickInfo = (ev) => {
-    setInfo (linkPopInfo);
+  const handleClickInfo = () => {
+    setInfo (true);
+  };
+
+  const handleCloseInfo = () => {
+    setInfo(false);
   };
 
   return (
@@ -25,9 +36,9 @@ function App() {
 
         <div className="box__iconForest">
           <div className="box__iconForest--forest">
-            <a href="./#">
+            <Link to= '/mine-sweeper'>
               <img className="box__iconForest--forest img" src={linkForest} alt="icono bosque" />
-            </a>
+            </Link>
           </div>
 
         <div className="box__iconWell">
@@ -46,28 +57,32 @@ function App() {
           </div>
         </div>
 
-        <div className='box__iconInfo'>
-          <div className='box__iconInfo--info'>
-            <a href="./#">
-            <img className='box__iconInfo--info img' src={linkInfo} alt="icono cartel info" onClick={handleClickInfo} />
-            </a>
+        <div className="box__iconInfo">
+          <div className="box__iconInfo--info" onClick={handleClickInfo}>
+            
+              <img
+                className="box__iconInfo--info img"
+                src={linkInfo}
+                alt="icono cartel info"
+              />
+            
           </div>
         </div>
+
+        {info ? (
+          <div className="popupInfo">
+            <img className="popupInfo__img" src={linkPopInfo} alt="imagen adicional" />
+            <img className="popupInfo__close" src={iconX} alt="icono para cerrar info" onClick={handleCloseInfo} />
+          </div>
+        ) : null}
+      
+
+
         
       </div>
         <img className='backgroundGame' src={backgroundGameByN} alt="escenario del juego" /> 
       </div>
 
-      
-
-      {/*{info && (
-        <div className="popupInfo">
-          <a className='popupInfo__close' handleClickInfo={handleClickInfo}>
-            <img className='popupInfo__close--img' src={iconX} alt="cerrar" />
-          </a>
-          <img className='popupInfo__img' src={info} alt="Información adicional" />
-        </div>
-      )}*/}
     </div>
   );
 };

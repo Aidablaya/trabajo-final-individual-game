@@ -3,6 +3,7 @@ import '../styles/App.scss';
 import Landing from '../pages/Landing';
 import { Route, Routes } from 'react-router-dom';
 import Gaming from '../pages/Gaming';
+import MineSweeper from '../pages/MineSweeper';
 
 
 function App() {
@@ -21,6 +22,11 @@ function App() {
             <Route path="/gaming" element={
               <>
                 <Gaming/>
+              </>
+            } />
+            <Route path="/mine-sweeper" element={
+              <>
+                <MineSweeper/>
               </>
             } />
           </Routes>
