@@ -12,6 +12,7 @@ import iconX from '../images/X.png';
 //import Popup from 'reactjs-popup';
 import '../styles/components/Gaming.scss'
 import { Link } from 'react-router-dom';
+import Bag from '../elementsMineS/Bag';
 
 
 
@@ -21,6 +22,7 @@ import { Link } from 'react-router-dom';
 function App() {
 
   const [info, setInfo] = useState(false);
+  const storedScore = { yellow: 0, red: 0, blue: 0 };
 
   const handleClickInfo = () => {
     setInfo (true);
@@ -67,6 +69,10 @@ function App() {
               />
             
           </div>
+        </div>
+
+        <div className="box__bag">
+        <Bag storedScore={storedScore} />
         </div>
 
         {info ? (

@@ -1,0 +1,22 @@
+.infoBag {
+    background-color: rgb(236, 237, 241);
+    border: 2px solid black;
+    width: 100px;
+    height: 610px;
+    list-style: none;
+    &__title {
+        text-align: center;
+    }
+    &__li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        &--img {
+            width: 65%;
+        }
+        &--text {
+
+        }
+    }
+}

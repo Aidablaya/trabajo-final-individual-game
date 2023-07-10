@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Box from "../elementsMineS/Box";
 import '../styles/elementsMineS/MinSweeper.scss';
 import { Link } from "react-router-dom";
+import Bag from "../elementsMineS/Bag";
+
 
 const MineSweeper = () => {
   const [score, setScore] = useState({ yellow: 0, red: 0, blue: 0 });
@@ -50,12 +52,12 @@ const MineSweeper = () => {
   return (
     <>
     <header>
-    <h1>Encuentra los materiales en el bosque. Cuidado hay minas!</h1>
+    <h1 className="title">Encuentra los materiales en el bosque. Cuidado hay minas!</h1>
     </header>
     <main className="mine">
       <article>
         
-        <section>
+        <section className="mine__table">
           <Box
             onScoreUpdate={handleScoreUpdate}
             gameOver={gameOver}
@@ -64,33 +66,34 @@ const MineSweeper = () => {
           />
         </section>
       </article>
-      <article>
-        <section>
+      <article className="mine__info">
+        <section className="mine__info--text">
           <h3>Score</h3>
           <ul>
             <li>Amarillo: {score.yellow}</li>
             <li>Azul: {score.blue}</li>
             <li>Rojo: {score.red}</li>
           </ul>
-        </section>
-        <section>
-          <h3>Antes de volver a adentrarte en el bosque, guarda los ingredientes en tu saco:</h3>
+          <h3>Si encuentras la bomba tienes que volver a empezar :). Antes de volver a adentrarte en el bosque, guarda los ingredientes en tu saco:</h3>
           <button onClick={handleStoreScore}>Guardar</button>
-          <ul>
-            <h3>Bolsa</h3>
-            <li>Amarillo: {storedScore.yellow}</li>
-            <li>Azul: {storedScore.blue}</li>
-            <li>Rojo: {storedScore.red}</li>
-          </ul>
-        </section>
-        {gameOver && (
+          {gameOver && (
         <button onClick={handleReset}>Volver a empezar</button>
       )}
-      <Link to='/Gaming'>Volver al poblado</Link>
+        </section>
+        
+        <section>
+          <Bag storedScore={storedScore}>
+
+          </Bag>
+        </section>
+      
+        
+      
       </article>
       
 
       </main>
+      <Link to='/Gaming'>Volver al poblado</Link>
     </>
   );
 };

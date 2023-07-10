@@ -82,6 +82,17 @@
         }
       }
     }
+    &__bag {
+      
+        position: absolute;
+        top: 32%;
+        left: 105%;
+        transform: translate(-50%, -50%);
+        background-color: antiquewhite;
+        z-index: 7; 
+    }
+    
+    
   }
   
   
@@ -128,4 +139,5 @@
       
     }
   };
+
   
