@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "text-pixel";
+    src: url("../../fonts/text-pixel.ttf") format("truetype");
+         
+    /* Agrega más formatos y rutas de archivo si es necesario */
+    font-weight: normal;
+    font-style: normal;
+  }
+  $header-font: "text-pixel";

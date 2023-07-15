@@ -1,10 +1,16 @@
+@import '../core/variables.scss';
+
+
 .header {
-    height: 30vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    
     &__title {
-       font-size: 10rem; 
+       font-size: 5rem; 
+       font-family: #{$header-font};
+       
     }
 }
 
@@ -13,11 +19,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: black;
+    font-family: #{$header-font};
     
     &__box {
-        border: 2px solid black;
+        border: 2px solid rgb(255, 255, 255);
+        color: white;
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+        background-color: rgba(128, 0, 128, 0.5);
         width: 600px;
-        height: 300px;
+        height: 250px;
+        margin-top: 20px;
         flex-direction: column;
         display: flex;
         align-items: center;
@@ -27,8 +39,17 @@
             margin-top: 20px;
         }
     }
+    &__button {
+        margin: 20px;
+        border-radius: 50px;
+        width: 250px;
+        font-family: #{$header-font};
+    }
 }
 
 .link {
     font-size: 5rem;
+    text-decoration: none;
+    color: inherit; 
+    
 }

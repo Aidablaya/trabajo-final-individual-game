@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+
 import "../styles/elementsMineS/Box.scss";
 import bombPng from "../images/Bomb.png";
 import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
 import saffron from "../images/Azafran.png";
 
-const Box = ({ onScoreUpdate, reset }) => {
-  const [values, setValues] = useState(Array(64).fill(""));
+const Box = ({ onScoreUpdate, setValues,values }) => {
+  
 
   const handleClick = (index) => {
     const options = ["1", "2", "3", "X"];
@@ -22,11 +22,6 @@ const Box = ({ onScoreUpdate, reset }) => {
     onScoreUpdate(newValue);
   };
 
-  useEffect(() => {
-    if (reset) {
-      setValues(Array(64).fill(""));
-    }
-  }, [reset]);
 
   const renderBoxContent = (value) => {
     if (value === "") {

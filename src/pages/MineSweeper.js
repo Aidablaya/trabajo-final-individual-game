@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import Bag from "../elementsMineS/Bag";
 
 
-const MineSweeper = () => {
-  const [score, setScore] = useState({ yellow: 0, red: 0, blue: 0 });
-  const [storedScore, setStoredScore] = useState({ yellow: 0, red: 0, blue: 0 });
+
+const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
+  
+  
   const [gameOver, setGameOver] = useState(false);
   const [values, setValues] = useState(Array(64).fill(""));
+  
 
   const handleScoreUpdate = (value) => {
     if (!gameOver) {
@@ -48,6 +50,9 @@ const MineSweeper = () => {
     }));
     setScore({ yellow: 0, red: 0, blue: 0 });
   };
+
+  
+  
 
   return (
     <>

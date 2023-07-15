@@ -12,7 +12,7 @@ const Landing = () => {
   return (
     <div>
       <header className="header">
-        <h1 className="header__title">Gaming of colors</h1>
+        <h1 className="header__title">The gaming of colors</h1>
       </header>
 
       <main className="main">
@@ -31,9 +31,11 @@ const Landing = () => {
           </article>      
         </section>
 
+        <button className="main__button">
+        <Link to='/Gaming' className="link">PLAY</Link>
+        </button>
         
-          
-        <Link to='/Gaming' className="link">Start</Link>
+        
       </main>
     </div>
   );

@@ -19,10 +19,10 @@ import Bag from '../elementsMineS/Bag';
 
 
 
-function App() {
-
+function Gaming({storedScore, setStoredScore}) {
+ 
   const [info, setInfo] = useState(false);
-  const storedScore = { yellow: 0, red: 0, blue: 0 };
+  
 
   const handleClickInfo = () => {
     setInfo (true);
@@ -72,7 +72,7 @@ function App() {
         </div>
 
         <div className="box__bag">
-        <Bag storedScore={storedScore} />
+        <Bag storedScore={storedScore} setStoredScore={setStoredScore} />
         </div>
 
         {info ? (
@@ -93,4 +93,4 @@ function App() {
   );
 };
 
-export default App;
+export default Gaming;
