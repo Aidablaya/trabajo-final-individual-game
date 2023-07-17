@@ -1,13 +1,18 @@
-//import { useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../styles/components/Landing.scss';
 
-
 const Landing = () => {
-  
- // const [start, setStart] = useState(false);
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://app.embed.im/snow.js';
+    script.defer = true;
+    document.body.appendChild(script);
 
-  
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div>
@@ -32,10 +37,8 @@ const Landing = () => {
         </section>
 
         <button className="main__button">
-        <Link to='/Gaming' className="link">PLAY</Link>
+          <Link to='/Gaming' className="link">PLAY</Link>
         </button>
-        
-        
       </main>
     </div>
   );

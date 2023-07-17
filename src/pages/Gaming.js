@@ -19,7 +19,7 @@ import Bag from '../elementsMineS/Bag';
 
 
 
-function Gaming({storedScore, setStoredScore}) {
+function Gaming({storedScore, setStoredScore, showSnow}) {
  
   const [info, setInfo] = useState(false);
   
@@ -31,6 +31,9 @@ function Gaming({storedScore, setStoredScore}) {
   const handleCloseInfo = () => {
     setInfo(false);
   };
+
+  
+  
 
   return (
     <div className="Gaming">

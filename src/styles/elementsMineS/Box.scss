@@ -1,14 +1,14 @@
 .container {
     width: 500px;
     height: 500px;
-    background-color: black;
+    background-color: rgb(248, 154, 154);
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-gap: 10px;
-    background-color: black;
+    background-color: rgb(245, 188, 188);
     &__box {
         
-        background-color: gray;
+        background-color: rgb(10, 80, 51);
         color: white;
         display: flex;
         align-items: center;

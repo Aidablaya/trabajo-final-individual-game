@@ -3,6 +3,7 @@ import Box from "../elementsMineS/Box";
 import '../styles/elementsMineS/MinSweeper.scss';
 import { Link } from "react-router-dom";
 import Bag from "../elementsMineS/Bag";
+import Modal from "../elementsMineS/Modal";
 
 
 
@@ -11,6 +12,7 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
   
   const [gameOver, setGameOver] = useState(false);
   const [values, setValues] = useState(Array(64).fill(""));
+  const [showModal, setShowModal] = useState(true);
   
 
   const handleScoreUpdate = (value) => {
@@ -55,7 +57,9 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
   
 
   return (
+    
     <>
+    <Modal showModal={showModal} setShowModal={setShowModal} />
     <header>
     <h1 className="title">Encuentra los materiales en el bosque. Cuidado hay minas!</h1>
     </header>
@@ -79,7 +83,7 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
             <li>Azul: {score.blue}</li>
             <li>Rojo: {score.red}</li>
           </ul>
-          <h3>Si encuentras la bomba tienes que volver a empezar :). Antes de volver a adentrarte en el bosque, guarda los ingredientes en tu saco:</h3>
+          
           <button onClick={handleStoreScore}>Guardar</button>
           {gameOver && (
         <button onClick={handleReset}>Volver a empezar</button>
