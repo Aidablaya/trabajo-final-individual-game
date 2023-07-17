@@ -4,6 +4,9 @@ import '../styles/elementsMineS/MinSweeper.scss';
 import { Link } from "react-router-dom";
 import Bag from "../elementsMineS/Bag";
 import Modal from "../elementsMineS/Modal";
+import saffron from "../images/Azafran.png";
+import blueberries from "../images/Arandanos.png";
+import redFruits from "../images/Redfruit.png";
 
 
 
@@ -60,49 +63,58 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
     
     <>
     <Modal showModal={showModal} setShowModal={setShowModal} />
+
     <header>
-    <h1 className="title">Encuentra los materiales en el bosque. Cuidado hay minas!</h1>
+    <h1 className="title">Encuentra los materiales en el bosque. Cuidado con los ladrones!</h1>
     </header>
+
     <main className="mine">
-      <article>
+
+      <article className="mine__table">        
         
-        <section className="mine__table">
           <Box
             onScoreUpdate={handleScoreUpdate}
             gameOver={gameOver}
             values={values}
             setValues={setValues}
           />
-        </section>
+        
       </article>
-      <article className="mine__info">
-        <section className="mine__info--text">
-          <h3>Score</h3>
-          <ul>
-            <li>Amarillo: {score.yellow}</li>
-            <li>Azul: {score.blue}</li>
-            <li>Rojo: {score.red}</li>
+
+      <article className="mine__info">    
+        <section>
+          <h3 className="mine__info--title">Score</h3>
+          <ul className="mine__info--list">
+            <li><img src={saffron} alt="" className="iconsScore"/>: {score.yellow}</li>
+            <li><img src={blueberries} alt="" className="iconsScore"/> : {score.blue}</li>
+            <li><img src={redFruits} alt="" className="iconsScore"/>: {score.red}</li>
           </ul>
           
           <button onClick={handleStoreScore}>Guardar</button>
           {gameOver && (
         <button onClick={handleReset}>Volver a empezar</button>
       )}
-        </section>
-        
-        <section>
+        </section> 
+      </article>
+
+      <article>
           <Bag storedScore={storedScore}>
 
           </Bag>
-        </section>
-      
-        
-      
+        </article> 
+    </main>
+
+    <footer className="footermine">
+      <article className="footermine__buttonReturn">
+        <button className="footermine__buttonReturn--button">
+          <Link to='/Gaming'>Volver al poblado</Link>
+        </button>
       </article>
+    </footer>   
+      
       
 
-      </main>
-      <Link to='/Gaming'>Volver al poblado</Link>
+
     </>
   );
 };

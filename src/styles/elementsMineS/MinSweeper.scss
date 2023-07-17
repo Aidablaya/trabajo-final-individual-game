@@ -1,6 +1,9 @@
+@import '../core/variables.scss';
 .title {
     text-align: center;
     margin: 20px;
+    font-family: #{$header-font};
+    font-size: 3rem;
 }
 
 .mine {
@@ -10,11 +13,59 @@
     justify-content: center;
     align-items: center;
     margin: 20px;
+    font-family: #{$header-font};
     &__info {
         display: flex;
+        width: 150px;
+       
+        &--title {
+            text-align: center;
+            font-size: 2rem;
+        }
+        &--list {
+            list-style: none;
+            background-color: antiquewhite;
+            width: 150%;
+           
+            & li {
+               // padding: 10%;
+            }
+        }
+       
+    }
+}
+.iconsScore {
+    width: 100%;
+}
 
-        &--text {
-            width: 40%;
+.footermine {
+   
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+
+    &__buttonReturn {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+        &--button {
+            height: 50px;
+            width: 300px;
+            font-family: #{$header-font};
+            background-color: black;
+            color: #ffffff;
+            font-size: 2rem;
+            
         }
     }
+}
+
+a {
+    
+    text-decoration: none;
+    color: inherit; 
+    
 }

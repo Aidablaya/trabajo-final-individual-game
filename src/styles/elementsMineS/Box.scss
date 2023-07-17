@@ -1,11 +1,12 @@
 .container {
-    width: 500px;
-    height: 500px;
-    background-color: rgb(248, 154, 154);
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-gap: 10px;
-    background-color: rgb(245, 188, 188);
+    width: 80vw; /* Por ejemplo, el 80% del ancho de la ventana del navegador */
+  max-width: 800px; /* Establecemos un ancho máximo para que no se vuelva demasiado grande */
+  height: auto; /* Esto permite que la altura se ajuste automáticamente según el contenido */
+  
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 2%; /* Utilizamos un porcentaje para el espacio entre los elementos */
+  //background-color: rgb(245, 188, 188);
     &__box {
         
         background-color: rgb(10, 80, 51);
