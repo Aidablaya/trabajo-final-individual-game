@@ -1,17 +1,11 @@
-@import '../core/variables.scss';
-
 .infoBag {
     background-color: rgb(236, 237, 241);
-    border: 10px double black;
+    border: 2px solid black;
     width: 200%;
     height: 100%;
     list-style: none;
-    border-right: none;
     &__title {
         text-align: center;
-        font-family: #{$header-font};
-        padding-top: 10px;
-        font-size: 1rem;;
     }
     &__li {
         display: flex;
@@ -19,7 +13,7 @@
         align-items: center;
         
         &--img {
-            width: 80%;
+            width: 65%;
         }
         
 }}

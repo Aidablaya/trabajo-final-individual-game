@@ -10,32 +10,69 @@
     display: flex;
     gap: 20px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin: 20px;
     font-family: #{$header-font};
+   
     &__info {
         display: flex;
-        width: 150px;
+        width: 20vw;
+        
        
         &--title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 3rem;
+            background-color: black;
+            color: #ffffff;
+            border-radius: 25px 25px 0 0;
         }
         &--list {
             list-style: none;
-            background-color: antiquewhite;
+            
+            border: 30px groove rgb(90, 57, 14) ;
             width: 150%;
-           
-            & li {
-               // padding: 10%;
+            & li{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
             }
+            & p{
+                margin: 10px;
+                font-size: 2rem;
+            }                       
+        }
+        &--button {
+            background-color: black;
+            color: white;
+            font-size: 3rem;
+            font-family: #{$header-font};
+            margin-top: 20px;
+            border-radius: 0px 20px;
+            
         }
        
     }
+    &__textReturnStart {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        &--button {
+            background-color: black;
+            color: white;
+            font-size: 3rem;
+            font-family: #{$header-font};
+            margin-top: 20px;
+            border-radius: 0px 20px;
+        }
+    }
+}
+h4 {
+    margin: 1px 20px;
 }
 .iconsScore {
-    width: 100%;
+    width: 60%;
 }
 
 .footermine {

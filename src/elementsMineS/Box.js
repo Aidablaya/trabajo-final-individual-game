@@ -6,7 +6,7 @@ import redFruits from "../images/Redfruit.png";
 import saffron from "../images/Azafran.png";
 
 const Box = ({ onScoreUpdate, setValues,values }) => {
-  
+
 
   const handleClick = (index) => {
     const options = ["1", "2", "3", "X"];
@@ -27,7 +27,7 @@ const Box = ({ onScoreUpdate, setValues,values }) => {
     if (value === "") {
       return null;
     } else if (value === "X") {
-      return <img src={bombPng} alt="X/Bomba" className="bomb-image" />;
+      return <p>X</p>;
     } else if (value === "1") {
       return <img src={saffron} alt="azafrán" className="bomb-image" />;
       
@@ -41,13 +41,15 @@ const Box = ({ onScoreUpdate, setValues,values }) => {
   };
 
   return (
-    <ul className="container">
-      {values.map((value, index) => (
-        <li key={index} className="container__box" onClick={() => handleClick(index)}>
-          {renderBoxContent(value)}
-        </li>
-      ))}
-    </ul>
+    <section className="gameMine" >
+      <ul className="gameMine__container">
+        {values.map((value, index) => (
+          <li key={index} className="gameMine__container--box" onClick={() => handleClick(index)}>
+            {renderBoxContent(value)}
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 

@@ -1,4 +1,6 @@
-
+.Gaming {
+  background-color: black;
+}
 .box {
     position: fixed; 
     width: 80vw;
@@ -83,9 +85,10 @@
       }
     }
     &__bag {
-      
+
+        
         position: absolute;
-        top: 32%;
+        top: 52%;
         left: 105%;
         transform: translate(-50%, -50%);
         background-color: antiquewhite;
@@ -140,4 +143,4 @@
     }
   };
 
-  
+ 

@@ -16,7 +16,17 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
   const [gameOver, setGameOver] = useState(false);
   const [values, setValues] = useState(Array(64).fill(""));
   const [showModal, setShowModal] = useState(true);
-  
+  const [isBagVisible, setIsBagVisible] = useState(false);
+
+ 
+
+  const handleOpenBag = () => {
+    setIsBagVisible(true);
+  };
+
+  const handleCloseBag = () => {
+    setIsBagVisible(false); 
+  };
 
   const handleScoreUpdate = (value) => {
     if (!gameOver) {
@@ -78,33 +88,46 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
             values={values}
             setValues={setValues}
           />
-        
+      
+
       </article>
+
+      
 
       <article className="mine__info">    
         <section>
           <h3 className="mine__info--title">Score</h3>
           <ul className="mine__info--list">
-            <li><img src={saffron} alt="" className="iconsScore"/>: {score.yellow}</li>
-            <li><img src={blueberries} alt="" className="iconsScore"/> : {score.blue}</li>
-            <li><img src={redFruits} alt="" className="iconsScore"/>: {score.red}</li>
+            <li><img src={saffron} alt="" className="iconsScore"/><p>{score.yellow}</p></li>
+            <li><img src={blueberries} alt="" className="iconsScore"/><p>{score.blue}</p></li>
+            <li><img src={redFruits} alt="" className="iconsScore"/><p>{score.red}</p></li>
           </ul>
+         
+          <button onClick={handleStoreScore} className="mine__info--button"><h4 className="textSave">Guardar</h4></button>
           
-          <button onClick={handleStoreScore}>Guardar</button>
-          {gameOver && (
-        <button onClick={handleReset}>Volver a empezar</button>
-      )}
+
         </section> 
+
+        
       </article>
 
-      <article>
-          <Bag storedScore={storedScore}>
+      <article className="bagMine">
+      <div className="bagMine__bag">
+        {isBagVisible && <Bag storedScore={storedScore} />}
+      </div>
 
-          </Bag>
+      <div className="tab" onClick={isBagVisible ? handleCloseBag : handleOpenBag}>
+        <p>Bag</p>
+      </div>
         </article> 
     </main>
-
+    <section className="mine__textReturnStart">
+          {gameOver && (
+        <button onClick={handleReset}><h4 className="mine__textReturnStart--button">Volver a empezar</h4></button>
+      )}
+      </section>       
     <footer className="footermine">
+      
       <article className="footermine__buttonReturn">
         <button className="footermine__buttonReturn--button">
           <Link to='/Gaming'>Volver al poblado</Link>

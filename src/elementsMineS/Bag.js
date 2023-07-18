@@ -9,7 +9,7 @@ import redPotion from "../images/Potionred .png";
 const Bag = ({storedScore}) => {
     return (
         <ul className="infoBag">
-            <h3 className="infoBag__title">Bolsa</h3>
+            <h5 className="infoBag__title">Bolsa</h5>
             
             <li className="infoBag__li">
                 <img src={saffron} alt="" className="infoBag__li--img"/> <p className="infoBag__li--text">/{storedScore.yellow}</p></li>
