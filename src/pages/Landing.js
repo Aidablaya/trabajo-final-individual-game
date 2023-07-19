@@ -10,7 +10,9 @@ const Landing = () => {
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      //document.body.removeChild(script);
+      document.body.removeChild(document.getElementById('embedim--snow'));
+      
     };
   }, []);
 

@@ -1,6 +1,6 @@
 
 import "../styles/elementsMineS/Box.scss";
-import bombPng from "../images/Bomb.png";
+//import bombPng from "../images/Bomb.png";
 import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
 import saffron from "../images/Azafran.png";

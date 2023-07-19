@@ -57,7 +57,7 @@
     &__textReturnStart {
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        justify-content: flex-end;
         &--button {
             background-color: black;
             color: white;
