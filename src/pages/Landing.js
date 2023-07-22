@@ -24,18 +24,22 @@ const Landing = () => {
 
       <main className="main">
         <section className="main__box">
-          <label className="main__box--text">Jugador atrevido:</label>
-          <input type="text" name="user" placeholder="Escribe aqui..." /> 
-          <article>
-            <h4>Records</h4>
-          <ul>
-            <li><p>JugadorX...................................02:56 min</p></li>
-            <li><p>JugadorX...................................03:56 min</p></li>
-            <li><p>JugadorX...................................04:86 min</p></li>
-            <li><p>JugadorX...................................05:77 min</p></li>
-            <li><p>JugadorX...................................05:80 min</p></li>
-          </ul>
-          </article>      
+          <div className="container-text">
+            <label className="main__box--text">Jugador atrevido:</label>
+            <input type="text" name="user" placeholder="Escribe aqui..." /> 
+            <article className="main__box--records">
+              <h4>Records</h4>
+              
+                <ul>
+                  <li><p>JugadorX...................................02:56 min</p></li>
+                  <li><p>JugadorX...................................03:56 min</p></li>
+                  <li><p>JugadorX...................................04:86 min</p></li>
+                  <li><p>JugadorX...................................05:77 min</p></li>
+                  <li><p>JugadorX...................................05:80 min</p></li>
+                </ul>
+            
+            </article>      
+            </div>
         </section>
 
         <button className="main__button">

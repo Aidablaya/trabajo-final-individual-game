@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import Box from "../elementsMineS/Box";
 import '../styles/elementsMineS/MinSweeper.scss';
 import { Link } from "react-router-dom";
-import Bag from "../elementsMineS/Bag";
+import Bag from "../elementsMineS/Bag.js";
 import Modal from "../elementsMineS/Modal";
 import saffron from "../images/Azafran.png";
 import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
+
+import iconBag from "../images/Iconbag.png";
 
 
 
@@ -111,15 +113,15 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
         
       </article>
 
-      <article className="bagMine">
-      <div className="bagMine__bag">
-        {isBagVisible && <Bag storedScore={storedScore} />}
+      
+      <div className="bag">
+        {isBagVisible && <Bag storedScore={storedScore} type="Mine"/>}
       </div>
 
       <div className="tab" onClick={isBagVisible ? handleCloseBag : handleOpenBag}>
-        <p>Bag</p>
+        <p><img className='tab__img' src={iconBag} alt="" />gbsrgts</p>
       </div>
-        </article> 
+        
     </main>
     <section className="mine__textReturnStart">
           {gameOver && (

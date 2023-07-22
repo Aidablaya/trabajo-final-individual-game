@@ -106,3 +106,13 @@ a {
     color: inherit; 
     
 }
+
+  
+.bagMine__bag {
+    position: absolute;
+        top: 55%;
+        left: 105%;
+        transform: translate(-50%, -50%);
+        //background-color: antiquewhite;
+        z-index: 7; 
+}

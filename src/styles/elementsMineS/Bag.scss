@@ -1,39 +1,71 @@
 @import '../core/variables.scss';
+@import '../core/mixins.scss';
 
-.infoBag {
-    background-color: rgb(236, 237, 241);
-    border: 10px double black;
-    width: 200%;
-    height: 100%;
-    list-style: none;
-    border-right: none;
-    &__title {
-        text-align: center;
-        font-family: #{$header-font};
-        padding-top: 10px;
-        font-size: 1rem;;
+.bag-Gaming {
+  background-color: #ffffff;
+  border: 10px double black;
+  width: 400%;
+  height: 100%;
+  list-style: none;
+  border-right: none;
+  
+  &__li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    
+    &--img {
+      width: 60%;
+      margin-bottom: 1px;
+      @include tablet {
+        width: 75%;
+      }
     }
-    &__li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        
-        &--img {
-            width: 80%;
-        }
-        
-}}
+  }
+
+}
+
+
+.bag-Mine {
+  background-color: rgb(236, 237, 241);
+  border: 2px solid black;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  &__title {
+    text-align: center;
+  }
+  &__li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    &--img {
+      width: 30%;
+      
+      
+  }
+  }
+}
+
 .tab {
     position: absolute;
-    top: 10%;
-    right: 0;
-    transform: translate(0, -50%);
-    background-color: lightgray;
+    width: 10%;
+    top: 8%;
+    right: -12%;
+    transform: translate(0, -50%, );
+    background-color: #242424;
     padding: 8px;
     cursor: pointer;
     border-radius: 8px 0 0 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     z-index: 10;
+    &__img {
+      width: 60%;
+      background-color: #ffffff;
+      border-radius: 15px;
+    }
   }
   
   .tab:hover {
@@ -55,3 +87,10 @@
     border-radius: 8px 0 0 8px;
   }
   
+  .bag-infoBag--size-50 {
+    font-size: 14px;
+  }
+  
+  .bag-infoBag--size-100 {
+    font-size: 50px;
+  }

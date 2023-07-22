@@ -2,6 +2,7 @@
   background-color: black;
 }
 .box {
+    
     position: fixed; 
     width: 80vw;
     height: 80vw * (9 / 16);
@@ -88,10 +89,10 @@
 
         
         position: absolute;
-        top: 52%;
+        top: 55%;
         left: 105%;
         transform: translate(-50%, -50%);
-        background-color: antiquewhite;
+        //background-color: antiquewhite;
         z-index: 7; 
     }
     
@@ -101,6 +102,7 @@
   
   
   .backgroundGame {
+    border-radius: 15px;
     width: 80vw;
     height: 80vw * (9 / 16);
     object-fit: contain;     
@@ -143,4 +145,12 @@
     }
   };
 
+ .background-gaming {
+  background-color: #020202;
+  opacity: 1;
+  background-image:  linear-gradient(#ffffff 4px, transparent 4px), linear-gradient(to right, #ffffff 4px, #020202 4px);
+  background-size: 80px 80px;
+  position: absolute;
+      z-index: 6;
+ }
  

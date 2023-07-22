@@ -7,6 +7,7 @@ import linkCauldron from '../images/icon-cauldron.png';
 import linkInfo from '../images/icon-info.png';
 import linkPopInfo from '../images/textoinfo.jpeg';
 import iconX from '../images/X.png';
+import iconBag from '../images/Iconbag.png'
 import '../styles/components/Gaming.scss';
 import { Link } from 'react-router-dom';
 import Bag from '../elementsMineS/Bag';
@@ -34,6 +35,7 @@ function Gaming({ storedScore, setStoredScore, showSnow }) {
 
   return (
     <div className="Gaming">
+      <div className='background-gaming'>
       <div className="box">
         <div className="box__iconForest">
           <div className="box__iconForest--forest">
@@ -66,11 +68,11 @@ function Gaming({ storedScore, setStoredScore, showSnow }) {
         </div>
 
         <div className="box__bag">
-          {isBagVisible && <Bag storedScore={storedScore} />}
+          {isBagVisible && <Bag storedScore={storedScore} type="Gaming"/>}
         </div>
 
         <div className="tab" onClick={isBagVisible ? handleCloseBag : handleOpenBag}>
-          <p>Bag</p>
+          <p><img className='tab__img' src={iconBag} alt="" /></p>
         </div>
 
         {info ? (
@@ -87,6 +89,7 @@ function Gaming({ storedScore, setStoredScore, showSnow }) {
       </div>
 
       <img className="backgroundGame" src={backgroundGameByN} alt="escenario del juego" />
+    </div>
     </div>
   );
 };

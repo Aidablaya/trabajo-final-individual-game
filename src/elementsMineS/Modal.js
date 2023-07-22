@@ -16,8 +16,8 @@ const Modal = ({ showModal, setShowModal }) => {
         <p>
             Puedes entrar en el bosque pero antes debes saber tres cosas:
             - Necesitas 3 tipos de objetos.
-            - Debes guardar los objetos en tu bolsa o lo perderás todo.
-            - Mucho cuidado con las minas, si encuentras una tendrás que volver a empezar y si además no has guardado los objetos los perderás.
+            - Debes guardar los objetos en tu bolsa.
+            - Mucho cuidado con los ladrones, si encuentras una tendrás que volver a empezar y si además no has guardado los objetos los perderás.
         
         </p>
         <button onClick={handleAccept}>Aceptar</button>

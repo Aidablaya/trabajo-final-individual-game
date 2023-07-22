@@ -1,6 +1,7 @@
 @import '../core/variables.scss';
 
 
+
 .header {
     height: 20vh;
     display: flex;
@@ -23,12 +24,16 @@
     font-family: #{$header-font};
     
     &__box {
-        border: 2px solid rgb(255, 255, 255);
-        color: white;
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 15px;
+        color: rgb(0, 0, 0);
         box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-        background-color: rgba(128, 0, 128, 0.5);
+        background-color: #6950d0;
+        opacity: 0.8;
+        background-image:  linear-gradient(#000000 1.5px, transparent 1.5px), linear-gradient(to right, #000000 1.5px, #6950d0 1.5px);
+        background-size: 30px 30px;
         width: 600px;
-        height: 250px;
+        height: 275px;
         margin-top: 20px;
         flex-direction: column;
         display: flex;
@@ -37,6 +42,12 @@
         gap: 10px;
         &--text {
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+
+        }´
+        &--records {
+            list-style: none;
         }
     }
     &__button {
@@ -44,6 +55,11 @@
         border-radius: 50px;
         width: 250px;
         font-family: #{$header-font};
+        background-color: $red;
+        
+        &:hover {
+            border: 4px solid $fluor-green;
+        }
     }
 }
 
@@ -52,4 +68,19 @@
     text-decoration: none;
     color: inherit; 
     
+}
+.container-text {
+    background-color: $white-blue;
+    width: 61%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+    border: 4px solid $fluor-green;
+    
+}
+li {
+    list-style: none;
 }
