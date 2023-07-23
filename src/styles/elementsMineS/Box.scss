@@ -1,9 +1,10 @@
+@import '../core/variables.scss';
 .gameMine {
-  width: 100%;
+  width: 80%;
   
 &__container {
-    width: 60vw; /* Por ejemplo, el 80% del ancho de la ventana del navegador */
-  max-width: 600px; /* Establecemos un ancho máximo para que no se vuelva demasiado grande */
+    width: 50vw; /* Por ejemplo, el 80% del ancho de la ventana del navegador */
+  max-width: 450px; /* Establecemos un ancho máximo para que no se vuelva demasiado grande */
   //height: auto; /* Esto permite que la altura se ajuste automáticamente según el contenido */
   
   display: grid;
@@ -12,7 +13,7 @@
   //background-color: rgb(245, 188, 188);
     &--box {
         
-        background-color: rgb(10, 80, 51);
+        background-color: $black;
         color: white;
         display: flex;
         align-items: center;
@@ -23,7 +24,9 @@
         width: 100%;
         height: 0;
         padding-bottom: 100%; /* Mantén el aspect ratio cuadrado */
-        
+        &:hover {
+          background-color: $green;
+        }
         
         
     }

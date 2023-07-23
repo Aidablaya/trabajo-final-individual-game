@@ -4,6 +4,7 @@ import "../styles/elementsMineS/Box.scss";
 import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
 import saffron from "../images/Azafran.png";
+import thief from "../images/Iconthief.png";
 
 const Box = ({ onScoreUpdate, setValues,values }) => {
 
@@ -27,7 +28,7 @@ const Box = ({ onScoreUpdate, setValues,values }) => {
     if (value === "") {
       return null;
     } else if (value === "X") {
-      return <p>X</p>;
+      return <img src={thief} alt="azafrán" className="bomb-image" />;
     } else if (value === "1") {
       return <img src={saffron} alt="azafrán" className="bomb-image" />;
       

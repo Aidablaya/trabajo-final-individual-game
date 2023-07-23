@@ -7,7 +7,7 @@ import Modal from "../elementsMineS/Modal";
 import saffron from "../images/Azafran.png";
 import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
-
+import plants from "../images/plants.png";
 import iconBag from "../images/Iconbag.png";
 
 
@@ -76,8 +76,8 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
     <>
     <Modal showModal={showModal} setShowModal={setShowModal} />
 
-    <header>
-    <h1 className="title">Encuentra los materiales en el bosque. Cuidado con los ladrones!</h1>
+    <header className="header">
+    <h1 className="header__title">Encuentra los materiales en el bosque. Cuidado con los ladrones!</h1>
     </header>
 
     <main className="mine">
@@ -98,7 +98,7 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
 
       <article className="mine__info">    
         <section>
-          <h3 className="mine__info--title">Score</h3>
+          <h3 className="mine__info--title">materiales</h3>
           <ul className="mine__info--list">
             <li><img src={saffron} alt="" className="iconsScore"/><p>{score.yellow}</p></li>
             <li><img src={blueberries} alt="" className="iconsScore"/><p>{score.blue}</p></li>
@@ -113,22 +113,23 @@ const MineSweeper = ({setScore, score, setStoredScore, storedScore}) => {
         
       </article>
 
+      <article className="inventory">
+        <div className="tab__bag" onClick={isBagVisible ? handleCloseBag : handleOpenBag}>
+          <p><img className='tab__bag--img' src={iconBag} alt="" /></p>
+        </div>
+        <div className="bag">
+          {isBagVisible && <Bag storedScore={storedScore} type="Mine"/>}
+        </div>
+      </article>
       
-      <div className="bag">
-        {isBagVisible && <Bag storedScore={storedScore} type="Mine"/>}
-      </div>
-
-      <div className="tab" onClick={isBagVisible ? handleCloseBag : handleOpenBag}>
-        <p><img className='tab__img' src={iconBag} alt="" />gbsrgts</p>
-      </div>
-        
     </main>
     <section className="mine__textReturnStart">
           {gameOver && (
-        <button onClick={handleReset}><h4 className="mine__textReturnStart--button">Volver a empezar</h4></button>
+        <button onClick={handleReset} className="mine__textReturnStart--button"><h4 >Volver a empezar</h4></button>
       )}
       </section>       
     <footer className="footermine">
+      
       
       <article className="footermine__buttonReturn">
         <button className="footermine__buttonReturn--button">
