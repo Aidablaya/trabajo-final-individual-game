@@ -2,6 +2,10 @@
 
 .header {
     background-color: #242424;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     &__title {
         display: flex;

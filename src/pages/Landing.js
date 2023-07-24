@@ -18,8 +18,8 @@ const Landing = () => {
 
   return (
     <div>
-      <header className="header">
-        <h1 className="header__title">The gaming of colors</h1>
+      <header className="headerLanding">
+        <h1 className="headerLanding__title">RAINBOW POT</h1>
       </header>
 
       <main className="main">
