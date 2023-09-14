@@ -4,6 +4,7 @@ import Landing from '../pages/Landing';
 import { Route, Routes } from 'react-router-dom';
 import Gaming from '../pages/Gaming';
 import MineSweeper from '../pages/MineSweeper';
+import Cauldron from '../pages/Cauldron';
 
 
 
@@ -32,6 +33,12 @@ function App() {
                 <MineSweeper setScore={setScore} score={score} setStoredScore={setStoredScore} storedScore={storedScore} />
               </>
             } />
+            <Route path="/Cauldron" element={
+              <>
+                <Cauldron />
+              </>
+            } />
+            
           </Routes>
         </main>
       </div>

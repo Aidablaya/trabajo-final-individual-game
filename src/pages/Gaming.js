@@ -37,6 +37,7 @@ function Gaming({ storedScore, setStoredScore, showSnow }) {
     <div className="Gaming">
       <div className='background-gaming'>
       <div className="box">
+
         <div className="box__iconForest">
           <div className="box__iconForest--forest">
             <Link to="/mine-sweeper">
@@ -55,9 +56,9 @@ function Gaming({ storedScore, setStoredScore, showSnow }) {
 
         <div className="box__iconCauldron">
           <div className="box__iconCauldron--cauldron">
-            <a href="./#">
+            <Link to="/Cauldron">
               <img className="box__iconCauldron--cauldron img" src={linkCauldron} alt="icono caldero" />
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -7,7 +7,7 @@ import Modal from "../elementsMineS/Modal";
 import saffron from "../images/Azafran.png";
 import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
-import plants from "../images/plants.png";
+//import plants from "../images/plants.png";
 import iconBag from "../images/Iconbag.png";
 
 
