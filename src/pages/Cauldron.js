@@ -4,39 +4,27 @@ import '../styles/components/Cauldron.scss';
 import iconBag from "../images/Iconbag.png";
 import Bag from "../elementsMineS/Bag.js";
 import '../styles/elementsMineS/Bag.scss';
-//import { useDrop } from "react-dnd";
 import PotionMix from '../elementsCauldron/PotionMix';
+//import { useDrop } from "react-dnd";
 
 
-function Cauldron ({storedScore,}) {
+
+function Cauldron ({storedScore, elements}) {
     const [isBagVisible, setIsBagVisible] = useState(false);
-   // const [draggedItem, setDraggedItem] = useState(null);
-    //const [mixPotionsVisible, setMixPotionsVisible] = useState(false);
-
+   
     const handleOpenBag = () => {
         setIsBagVisible(true);
       };
     
-      const handleCloseBag = () => {
+    const handleCloseBag = () => {
         setIsBagVisible(false); 
       };
+    
+      const handleDragStart = (e, item) => {
+        e.dataTransfer.setData("text/plain", JSON.stringify(item));
+    };
 
-/*
-      const handleDropOnCauldron = (event) => {
-        event.preventDefault(); 
-        if (draggedItem) {
-            console.log('handleDropOnCauldron executed');
-          // Realiza alguna acción con el elemento arrastrado
-          // Por ejemplo, muestra la ventana emergente aquí
-          setMixPotionsVisible(true);
-        }
-      };
-      const handleDropItem = (item) => {
-        setDraggedItem(item);
-        console.log('handleDropItem executed'); // Agrega esto
-        setMixPotionsVisible(true);
-      };
-    */
+
     return (
         <>
             <header>
@@ -65,7 +53,8 @@ function Cauldron ({storedScore,}) {
                 </article>
             </main>
             <footer>
-            <PotionMix/>
+            
+            <PotionMix elements={elements} handleDragStart={handleDragStart} />
         
             </footer>
         </>

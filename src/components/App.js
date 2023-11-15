@@ -5,8 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Gaming from '../pages/Gaming';
 import MineSweeper from '../pages/MineSweeper';
 import Cauldron from '../pages/Cauldron';
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+
 
 
 
@@ -14,8 +13,9 @@ function App() {
   const [score, setScore] = useState({ yellow: 0, red: 0, blue: 0 });
   const [storedScore, setStoredScore] = useState({ yellow: 0, red: 0, blue: 0 });
   return (
-    <DndProvider backend={HTML5Backend}>
+    
       <div className="App">
+        
         <main>
           
           <Routes> 
@@ -48,7 +48,7 @@ function App() {
         </main>
         
       </div>
-      </DndProvider>
+      
     
   );
 }

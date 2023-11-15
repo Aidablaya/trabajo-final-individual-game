@@ -1,12 +1,21 @@
-import React from "react";
 
-function PotionMix ({ item }) {
+import '../styles/elementsCauldron/PotionMix.scss'
+
+
+function PotionMix( {elements, handleDragStart}) {
+  
   return (
-    <div className="item-popup">
-      <h2>Item Dropped: {item}</h2>
-      {/* Agrega más contenido de la ventana emergente aquí */}
+    <div className="drop-board">
+      {elements && elements.map((element) => (
+        <div
+          key={element.id}
+          draggable="true"
+          onDragStart={(e) => handleDragStart(e, element)}
+        >
+          {/* Renderiza el contenido de tu componente PotionMix aquí */}
+        </div>
+      ))}
     </div>
   );
 }
-
 export default PotionMix;
