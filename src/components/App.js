@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+
 import '../styles/App.scss';
 import Landing from '../pages/Landing';
 import { Route, Routes } from 'react-router-dom';
 import Gaming from '../pages/Gaming';
 import MineSweeper from '../pages/MineSweeper';
 import Cauldron from '../pages/Cauldron';
+import { Provider } from "react-redux";
+import store from "../store/store";
 
 
 
 
 function App() {
-  const [score, setScore] = useState({ yellow: 0, red: 0, blue: 0 });
-  const [storedScore, setStoredScore] = useState({ yellow: 0, red: 0, blue: 0 });
+  
   return (
-    
+    <Provider store={store}>
       <div className="App">
         
         <main>
@@ -28,17 +29,17 @@ function App() {
             />
             <Route path="/gaming" element={
               <>
-                <Gaming setStoredScore={setStoredScore} storedScore={storedScore}/>
+                <Gaming />
               </>
             } />
             <Route path="/mine-sweeper" element={
               <>
-                <MineSweeper setScore={setScore} score={score} setStoredScore={setStoredScore} storedScore={storedScore} />
+                <MineSweeper />
               </>
             } />
             <Route path="/Cauldron" element={
               <>
-                <Cauldron storedScore={storedScore} />
+                <Cauldron  />
               </>
             } />
             
@@ -49,7 +50,7 @@ function App() {
         
       </div>
       
-    
+      </Provider>
   );
 }
 

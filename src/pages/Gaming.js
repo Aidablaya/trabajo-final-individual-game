@@ -11,8 +11,9 @@ import iconBag from '../images/Iconbag.png'
 import '../styles/components/Gaming.scss';
 import { Link } from 'react-router-dom';
 import Bag from '../elementsMineS/Bag';
+import { connect } from 'react-redux';
 
-function Gaming({ storedScore, setStoredScore, showSnow }) {
+function Gaming({ elements }) {
   const [info, setInfo] = useState(false);
 
   const [isBagVisible, setIsBagVisible] = useState(false);
@@ -32,6 +33,7 @@ function Gaming({ storedScore, setStoredScore, showSnow }) {
   const handleCloseBag = () => {
     setIsBagVisible(false); 
   };
+
 
   return (
     <div className="Gaming">
@@ -69,7 +71,7 @@ function Gaming({ storedScore, setStoredScore, showSnow }) {
         </div>
 
         <div className="box__bag">
-          {isBagVisible && <Bag storedScore={storedScore} type="Gaming"/>}
+        {isBagVisible && <Bag elements={elements} type="Gaming" />}
         </div>
 
         <div className="tab" onClick={isBagVisible ? handleCloseBag : handleOpenBag}>
@@ -94,5 +96,8 @@ function Gaming({ storedScore, setStoredScore, showSnow }) {
     </div>
   );
 };
+const mapStateToProps = (state) => ({
+  elements: state.bag.elements,
+});
 
-export default Gaming;
+export default connect(mapStateToProps)(Gaming);
