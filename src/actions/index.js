@@ -1,12 +1,16 @@
 
 export const INCREMENT_SCORE = 'INCREMENT_SCORE';
+export const UPDATE_SCORE = 'UPDATE_SCORE';
 
-export const incrementScore = (id) => {
-  return {
-    type: 'INCREMENT_SCORE',
-    payload: id,
-  };
-};
+export const incrementScore = (id) => ({
+  type: 'INCREMENT_SCORE',
+  payload: id,
+});
+
+export const updateScore = (id, amount) => ({
+  type: 'UPDATE_SCORE',
+  payload: { id, amount },
+});
 /*
   export const resetScore = () => {
     return {

@@ -1,4 +1,4 @@
-import { INCREMENT_SCORE } from "../actions";
+import { INCREMENT_SCORE, UPDATE_SCORE } from '../actions';
 
 import saffron from "../images/Azafran.png";
 import blueberries from "../images/Arandanos.png";
@@ -36,6 +36,15 @@ const bagReducer = ( state = initialStateBag, action) => {
                         element.id === action.payload ? {...element, score: element.score + 1} : element
                     ),
             };
+            case UPDATE_SCORE:
+      return {
+        ...state,
+        elements: state.elements.map((element) =>
+          element.id === action.payload.id
+            ? { ...element, score: element.score + action.payload.amount }
+            : element
+        ),
+      };
             default:
                 return state;
     }
