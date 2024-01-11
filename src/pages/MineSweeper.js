@@ -11,7 +11,7 @@ import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
 import iconBag from "../images/Iconbag.png";
 
-const MineSweeper = ({ setStoredScore, incrementScore, updateScore, bagScore  }) => {
+const MineSweeper = ({ setStoredScore, updateScore  }) => {
   const [score, setScore] = useState({ yellow: 0, red: 0, blue: 0 });
   const [gameOver, setGameOver] = useState(false);
   const [values, setValues] = useState(Array(64).fill(""));

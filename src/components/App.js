@@ -7,6 +7,8 @@ import MineSweeper from '../pages/MineSweeper';
 import Cauldron from '../pages/Cauldron';
 import { Provider } from "react-redux";
 import store from "../store/store";
+import { DndProvider } from 'react-dnd';//DndProvider para D&D
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 
 
@@ -14,6 +16,7 @@ import store from "../store/store";
 function App() {
   
   return (
+    <DndProvider backend={HTML5Backend}>
     <Provider store={store}>
       <div className="App">
         
@@ -51,6 +54,7 @@ function App() {
       </div>
       
       </Provider>
+      </DndProvider>
   );
 }
 

@@ -1,9 +1,47 @@
-.drop-board {
+@import '../core/variables.scss';
+
+
+.box-drop {
+    width: 55vw;
+    //height: 25vh;
+    color: white;
+    border-radius: 15px;
+    border: 2px solid white;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border: 1px solid black;
-    height: 100px;
-    width: 500px;
-    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; 
+    font-size: 18px;
+    z-index: 2;
+    position: fixed; 
+    top: 50%;  
+    left: 50%;  
+    transform: translate(-50%, -50%);
+    
+.listMix {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+
+  &__item {
+    border: 2px solid white;
+    border-radius: 15px;
+  }
 }
+
+.buttonMix {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+}
+
+  
+    &.over {
+      border-color: $light-yellow; // Cambia el color del borde cuando se está arrastrando sobre él
+    }
+  
+    p {
+      margin: 0; // Elimina el margen interno del párrafo
+    }
+  }

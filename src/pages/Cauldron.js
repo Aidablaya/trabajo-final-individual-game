@@ -9,7 +9,7 @@ import PotionMix from '../elementsCauldron/PotionMix';
 
 
 
-function Cauldron ({storedScore, elements}) {
+function Cauldron ({storedScore, elements, mixList}) {
     const [isBagVisible, setIsBagVisible] = useState(false);
    
     const handleOpenBag = () => {
@@ -29,6 +29,7 @@ function Cauldron ({storedScore, elements}) {
         <>
             <header>
                 <h1>Hola</h1>
+                
             </header>
             <main className='mainCauldron'>
                 <article 
@@ -51,10 +52,13 @@ function Cauldron ({storedScore, elements}) {
             )}
           </div>
                 </article>
+                <article>
+                <PotionMix mixList={mixList} elements={elements} handleDragStart={handleDragStart} />
+                </article>
             </main>
             <footer>
             
-            <PotionMix elements={elements} handleDragStart={handleDragStart} />
+            
         
             </footer>
         </>

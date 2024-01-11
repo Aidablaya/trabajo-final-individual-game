@@ -5,22 +5,20 @@ import { incrementScore } from "../actions";
 import BagItem from "./BagItem";
 import '../styles/elementsMineS/Bag.scss';
 
-const Bag = ({ elements, type }) => {
-  const handleDragStart = (e, id) => {
-    e.dataTransfer.setData("text/plain", JSON.stringify({ id }));
-  };
+const Bag = ({ elements, type, setStoredScore }) => {
+
 
   return (
     <ul className={`bag-${type}`}>
       {elements.map((element) => (
         <BagItem
-          id={element.id}
-          key={element.name}
-          imgSrc={element.imgSrc}
-          type={type}
-          score={element.score}
-          onDragStart={(e) => handleDragStart(e, element.id)}
-        />
+        key={element.id}
+        imgSrc={element.imgSrc}
+        type={type}
+        score={element.score}
+        setScore={setStoredScore}
+        element={element}  
+      />
       ))}
     </ul>
   );
