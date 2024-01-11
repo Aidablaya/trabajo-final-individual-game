@@ -1,0 +1,14 @@
+@import '../core/variables.scss';
+
+
+.button {
+      
+      height: 50px;
+      width: 300px;
+      font-family: #{$header-font};
+      background-color: black;
+      color: #ffffff;
+      font-size: 2rem;
+      border-radius: 50px;
+      
+  }

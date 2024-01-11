@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import { incrementScore, updateScore } from "../actions";
 import Box from "../elementsMineS/Box";
 import '../styles/elementsMineS/MinSweeper.scss';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Bag from "../elementsMineS/Bag.js";
 import Modal from "../elementsMineS/Modal";
 import saffron from "../images/Azafran.png";
 import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
 import iconBag from "../images/Iconbag.png";
+import ReturnToVillageButton from "../elementsGeneral/returnVillageButton.js";
 
 const MineSweeper = ({ setStoredScore, updateScore  }) => {
   const [score, setScore] = useState({ yellow: 0, red: 0, blue: 0 });
@@ -114,9 +115,7 @@ const MineSweeper = ({ setStoredScore, updateScore  }) => {
 
       <footer className="footermine">
         <article className="footermine__buttonReturn">
-          <button className="footermine__buttonReturn--button">
-            <Link to='/Gaming'>Volver al poblado</Link>
-          </button>
+          <ReturnToVillageButton />
         </article>
       </footer>
     </>

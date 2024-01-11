@@ -33,3 +33,11 @@
     height: 100vh;
 }
 
+.footerCauldron {
+    position: fixed;
+    z-index: 2;
+    bottom: 0; /* Agregar esta propiedad para posicionarlo en la parte inferior */
+    width: 100%;
+    padding: 5%;
+}
+

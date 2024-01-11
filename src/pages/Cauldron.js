@@ -5,6 +5,7 @@ import iconBag from "../images/Iconbag.png";
 import Bag from "../elementsMineS/Bag.js";
 import '../styles/elementsMineS/Bag.scss';
 import PotionMix from '../elementsCauldron/PotionMix';
+import ReturnToVillageButton from "../elementsGeneral/returnVillageButton.js";
 //import { useDrop } from "react-dnd";
 
 
@@ -28,7 +29,7 @@ function Cauldron ({storedScore, elements, mixList}) {
     return (
         <>
             <header>
-                <h1>Hola</h1>
+                
                 
             </header>
             <main className='mainCauldron'>
@@ -56,9 +57,9 @@ function Cauldron ({storedScore, elements, mixList}) {
                 <PotionMix mixList={mixList} elements={elements} handleDragStart={handleDragStart} />
                 </article>
             </main>
-            <footer>
+            <footer className='footerCauldron'>
             
-            
+              <ReturnToVillageButton />
         
             </footer>
         </>

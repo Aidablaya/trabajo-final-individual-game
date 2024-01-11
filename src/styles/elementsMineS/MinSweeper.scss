@@ -121,17 +121,7 @@ h4 {
         display: flex;
         justify-content: center;
         padding-bottom: 50px;
-        &--button {
-            
-            height: 50px;
-            width: 300px;
-            font-family: #{$header-font};
-            background-color: black;
-            color: #ffffff;
-            font-size: 2rem;
-            border-radius: 50px;
-            
-        }
+        
     }
 }
 
