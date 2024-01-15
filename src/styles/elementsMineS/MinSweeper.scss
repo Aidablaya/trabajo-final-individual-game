@@ -2,10 +2,12 @@
 
 .header {
     background-color: #242424;
-    height: 20vh;
-    display: flex;
+    //height: 20vh;
+    //display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    //z-index: 1;
     
     &__title {
         display: flex;
@@ -27,17 +29,25 @@
 
 
 .mine {
-    background-color: $fluor-green;
+    
     height: 60vh;
-    padding-top: 20px;
     display: flex;
+    flex-direction: row;  
+    align-items: center;     
+    justify-content: center; 
     gap: 20px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 20px;
     font-family: #{$header-font};
-    padding-left: 30%;
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    &__table {
+        width: 100;
+    }
+    
+    
    
     &__info {
         display: flex;
@@ -54,7 +64,8 @@
         &--list {
             list-style: none;
             background-color: #ffffff;
-            border: 15px groove $grey; 
+            border: 15px solid $grey; 
+            border-radius: 15px;
             width: 100%;
             & li{
                 display: flex;
@@ -77,27 +88,21 @@
             border-radius: 50px;
             border: 4px solid $black;
             cursor: pointer;
+            position: relative;
+            z-index: 1;
             
         }
        
     }
-    
-    &__textReturnStart {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        
-        
-        &--button {
-            background-color: black;
-            color: white;
-            font-size: 1.5rem;
-            font-family: #{$header-font};
-            cursor: pointer;
-            border-radius: 50px;
-        }
+    &__inventory {
+    position: relative;
+    z-index: 7;
+    top: -50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+
     }
+    
 }
 h4 {
     margin: 1px 20px;
@@ -108,12 +113,37 @@ h4 {
 
 .footermine {
     
+    padding-top: 60%;
     height: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
-    margin-top: 20px;
+    align-items: flex-start;
+    z-index: 2;
+    
+    
+
+    &__textReturnStart {
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+       
+        
+        
+        &--button {
+            background-color: black;
+            color: white;
+            font-size: 1.5rem;
+            font-family: #{$header-font};
+            cursor: pointer;
+            border-radius: 50px;
+            position: relative;
+       
+        }
+    }
 
     &__buttonReturn {
         
@@ -133,16 +163,36 @@ a {
 }
 
   
-.bag {
-    display: flex;
-    width: 30%;
-    z-index: 7; 
-    
+
+
+
+.backgroundMineSweeper {
+    border-radius: 15px;
+    width: 70vw;
+    height: 70vw * (9 / 16);
+    object-fit: contain;     
+    position: fixed; 
+    top: 50%;  
+    left: 50%;  
+    transform: translate(-50%, -50%);   
+    z-index: 0;
 }
-.inventory {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: flex-end;
-    height: 100%;
+
+.tab__bagMine {
+    position: relative;
+    
+    top: 0%;
+    right: -250%;
+    //transform: translate(0, -50%, );
+    background-color: #ffffff;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px 0 0 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    z-index: 50;
+    &--img {
+      width: 60%;
+      background-color: #242424;
+      border-radius: 15px;
+    }
   }

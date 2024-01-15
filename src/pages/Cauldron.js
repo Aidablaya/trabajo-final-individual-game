@@ -33,10 +33,7 @@ function Cauldron ({storedScore, elements, mixList}) {
                 
             </header>
             <main className='mainCauldron'>
-                <article 
-                
-                >
-    
+                <article>
                     <img className='backgroundCauldron' src={backgroundCauldron} alt="" />
                 </article>
                 <article className='inventoryCauldron'>
@@ -44,10 +41,10 @@ function Cauldron ({storedScore, elements, mixList}) {
                         <p><img  src={iconBag} alt="" /></p>
                     </div>
                     <div className="bagCauldron">
-            {isBagVisible && (
+                      {isBagVisible && (
               <Bag
                 storedScore={storedScore}
-                type="Mine"
+                type="Cauldron"
                 
               />
             )}

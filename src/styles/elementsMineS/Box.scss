@@ -3,7 +3,7 @@
   width: 80%;
   
 &__container {
-    width: 50vw; /* Por ejemplo, el 80% del ancho de la ventana del navegador */
+    width: 30vw; /* Por ejemplo, el 80% del ancho de la ventana del navegador */
   max-width: 450px; /* Establecemos un ancho máximo para que no se vuelva demasiado grande */
   //height: auto; /* Esto permite que la altura se ajuste automáticamente según el contenido */
   
@@ -23,7 +23,8 @@
         position: relative;
         width: 100%;
         height: 0;
-        padding-bottom: 100%; /* Mantén el aspect ratio cuadrado */
+        padding-bottom: 100%;
+        ; /* Mantén el aspect ratio cuadrado */
         &:hover {
           background-color: $green;
         }

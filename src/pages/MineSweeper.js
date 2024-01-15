@@ -11,6 +11,7 @@ import blueberries from "../images/Arandanos.png";
 import redFruits from "../images/Redfruit.png";
 import iconBag from "../images/Iconbag.png";
 import ReturnToVillageButton from "../elementsGeneral/returnVillageButton.js";
+import backgroundForest from "../images/fondoBosque - copia.gif";
 
 const MineSweeper = ({ setStoredScore, updateScore  }) => {
   const [score, setScore] = useState({ yellow: 0, red: 0, blue: 0 });
@@ -71,10 +72,17 @@ const MineSweeper = ({ setStoredScore, updateScore  }) => {
       <Modal showModal={showModal} setShowModal={setShowModal} />
 
       <header className="header">
-        <h1 className="header__title">Encuentra los materiales en el bosque. Cuidado con los ladrones!</h1>
+       
+        
       </header>
-
+      
+     
+      
       <main className="mine">
+      
+          
+       
+            
         <article className="mine__table">
           <Box
             onScoreUpdate={handleScoreUpdate}
@@ -85,8 +93,9 @@ const MineSweeper = ({ setStoredScore, updateScore  }) => {
         </article>
 
         <article className="mine__info">
+          
           <section>
-            <h3 className="mine__info--title">materiales</h3>
+            <h3 className="mine__info--title">ingredientes</h3>
             <ul className="mine__info--list">
               <li><img src={saffron} alt="" className="iconsScore" /><p>{score.yellow}</p></li>
               <li><img src={blueberries} alt="" className="iconsScore" /><p>{score.blue}</p></li>
@@ -95,28 +104,35 @@ const MineSweeper = ({ setStoredScore, updateScore  }) => {
 
             <button onClick={handleStoreScore} className="mine__info--button"><h4 className="textSave">Guardar</h4></button>
           </section>
+      
         </article>
 
-        <article className="inventory">
-          <div className="tab__bag" onClick={isBagVisible ? handleCloseBag : handleOpenBag}>
-            <p><img className='tab__bag--img' src={iconBag} alt="" /></p>
+        <article>
+        <div className="tab__bagMine" onClick={isBagVisible ? handleCloseBag : handleOpenBag}>
+            <p><img className='tab__bagMine--img' src={iconBag} alt="" /></p>
           </div>
           <div className="bag">
             {isBagVisible && <Bag storedScore={setStoredScore} type="Mine" />}
           </div>
         </article>
-      </main>
 
-      <section className="mine__textReturnStart">
+      </main>
+      
+    
+      <img className='backgroundMineSweeper' src={backgroundForest} alt="" />
+      
+      
+      
+      <footer className="footermine">
+      
         {gameOver && (
           <button onClick={handleReset} className="mine__textReturnStart--button"><h4 >Volver a empezar</h4></button>
         )}
-      </section>
-
-      <footer className="footermine">
-        <article className="footermine__buttonReturn">
+      
+        
+          
           <ReturnToVillageButton />
-        </article>
+        
       </footer>
     </>
   );

@@ -1,6 +1,7 @@
 @import '../core/variables.scss';
 @import '../core/mixins.scss';
 
+//Gaming
 .bag-Gaming {
   background-color: #ffffff;
   border: 10px double black;
@@ -26,17 +27,41 @@
 
 }
 
+.tab {
+  position: absolute;
+  width: 10%;
+  top: 8%;
+  right: -12%;
+  transform: translate(0, -50%, );
+  background-color: #242424;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  &__img {
+    width: 60%;
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+}
 
+.tab:hover {
+  background-color: gray;
+  color: white;
+}
+
+//MineSweeper
 .bag-Mine {
   background-color: rgb(236, 237, 241);
   border: 4px solid black;
   border-radius: 15px;
-  width: 150%;
+  width: 100%;
   height: 100%;
   list-style: none;
   position: relative;
-  top: -30px;
-  right: -50px;
+  top: 10px;
+  right: -250px;
   
   &__li {
     display: flex;
@@ -51,29 +76,7 @@
   }
 }
 
-.tab {
-    position: absolute;
-    width: 10%;
-    top: 8%;
-    right: -12%;
-    transform: translate(0, -50%, );
-    background-color: #242424;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 8px 0 0 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-    z-index: 50;
-    &__img {
-      width: 60%;
-      background-color: #ffffff;
-      border-radius: 15px;
-    }
-  }
-  
-  .tab:hover {
-    background-color: gray;
-    color: white;
-  }
+
   
  .popupBag {
      
@@ -98,11 +101,11 @@
   }
 
   .tab__bag {
-     position: absolute;
-    width: 10%;
-    top: 10%;
-    right: 0%;
-    transform: translate(0, -50%, );
+    //position: relative;
+    
+    top: 0%;
+    right: -100%;
+    //transform: translate(0, -50%, );
     background-color: #ffffff;
     padding: 8px;
     cursor: pointer;
@@ -117,4 +120,30 @@
   
   }
 
+  //Cauldron
   
+
+  //MineSweeper
+.bag-Cauldron {
+  background-color: rgb(236, 237, 241);
+  border: 4px solid black;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  position: relative;
+  top: 10px;
+  right: -90px;
+  
+  &__li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    &--img {
+      width: 40%;
+      
+      
+  }
+  }
+}
