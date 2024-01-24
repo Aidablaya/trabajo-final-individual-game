@@ -50,9 +50,9 @@ function Gaming({ elements }) {
 
         <div className="box__iconWell">
           <div className="box__iconWell--well">
-            <a href="./#">
+            <Link to="/Well">
               <img className="box__iconWell--well img" src={linkWell} alt="icono pozo" />
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -1,0 +1,12 @@
+
+.backgroundEndPage {
+    border-radius: 15px;
+    width: 80vw;
+    height: 80vw * (9 / 16);
+    object-fit: contain;     
+    position: fixed; 
+    top: 50%;  
+    left: 50%;  
+    transform: translate(-50%, -50%);   
+    z-index: 0;
+}

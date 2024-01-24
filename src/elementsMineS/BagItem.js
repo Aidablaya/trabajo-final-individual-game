@@ -16,6 +16,8 @@ const BagItem = ({ imgSrc, type, score, element }) => {
   }),
 });
 
+console.log("BagItem is rendered and draggable:", score > 0);
+
   return (
     <div
       ref={drag}

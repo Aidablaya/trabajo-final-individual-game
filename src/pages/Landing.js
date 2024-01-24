@@ -1,25 +1,16 @@
-import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../styles/components/Landing.scss';
+import StarsBackground from "../elementLanding/StarsBackground.js";
+import multicolorPotion from "../images/Potionmulticolor.png";
 
 const Landing = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://app.embed.im/snow.js';
-    script.defer = true;
-    document.body.appendChild(script);
-
-    return () => {
-      //document.body.removeChild(script);
-      document.body.removeChild(document.getElementById('embedim--snow'));
-      
-    };
-  }, []);
-
   return (
-    <div>
+    <div className="bodyLanding" >
+      
+      <StarsBackground className="stars"/>
+      
       <header className="headerLanding">
-        <h1 className="headerLanding__title">RAINBOW POT</h1>
+        <h1 className="headerLanding__title">A druid's work <img className="headerLanding__title--icon" src={multicolorPotion} alt="" /></h1>
       </header>
 
       <main className="main">
@@ -39,13 +30,19 @@ const Landing = () => {
                 </ul>
             
             </article>      
-            </div>
+          </div>
         </section>
 
         <button className="main__button">
           <Link to='/Gaming' className="link">PLAY</Link>
         </button>
       </main>
+      <footer className="footerLanding">
+        <div className="footerLanding__box">
+          <p className="footerLanding__box--copy">&copy; 2024 🌩️</p>
+          <p className="footerLanding__box--text">Desarrollado por Aida Blaya Balaguer</p>
+        </div>
+      </footer>
     </div>
   );
 };
